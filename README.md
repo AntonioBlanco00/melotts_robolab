@@ -1,5 +1,6 @@
 # melotts_robolab
-Intro to component here
+Componente que recibe una string y la reproduce TTS.
+Necesita estar conectado a internet por cable, y a EBO por wifi.
 
 
 ## Configuration parameters
@@ -9,7 +10,21 @@ etc/config
 ```
 you can find an example of a configuration file. We can find there the following lines:
 ```
-EXAMPLE HERE
+# Endpoints for implements interfaces
+Speech.Endpoints=tcp -p 11339
+
+
+# Proxies for required interfaces
+EmotionalMotorProxy = emotionalmotor:tcp -h 192.168.16.1 -p 30001
+
+# 192.168.16.1 es la ip para conectarse a EBO
+
+
+Ice.Warn.Connections=0
+Ice.Trace.Network=0
+Ice.Trace.Protocol=0
+Ice.MessageSizeMax=20004800
+
 ```
 
 ## Starting the component
